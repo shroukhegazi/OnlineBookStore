@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+from datetime import timedelta
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -100,7 +101,10 @@ DATABASES =  {
         'PORT': '5432',             
     }
 }
-
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=30), 
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),  
+}
 DJOSER = {
     'LOGIN_FIELD': 'email', 
     'SEND_ACTIVATION_EMAIL': False,  
