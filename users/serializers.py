@@ -7,11 +7,12 @@ from users.models import CustomUser
 class CustomUserCreateSerializer(UserCreateSerializer):
     class Meta(UserCreateSerializer.Meta):
         model = CustomUser
-        fields = ("id", "username", "email", "password")
+        fields = ("id", "username", "email", "name", "password")
 
     def validate(self, attrs):
         email = attrs.get("email", "").lower()
         username = attrs.get("username", "").lower()
+        username = attrs.get("name", "")
 
         # Check if email already exists
         if CustomUser.objects.filter(email=email).exists():

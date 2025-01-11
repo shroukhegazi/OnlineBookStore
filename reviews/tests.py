@@ -9,7 +9,7 @@ from users.models import CustomUser
 @pytest.fixture
 def user():
     return CustomUser.objects.create_user(
-        username="testuser", email="testuser@example.com", password="testpassword"
+        username="testuser", email="testuser@example.com", name="test user",password="testpassword"
     )
 
 
