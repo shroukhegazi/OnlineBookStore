@@ -6,6 +6,9 @@ up:
 build:
 	docker-compose -f docker-compose.yml build
 
+upd:
+	docker-compose -f docker-compose.yml up -d
+
 run:
 	docker-compose -f docker-compose.yml run $(filter-out $@,$(MAKECMDGOALS))
 
@@ -26,7 +29,7 @@ createsuperuser:
 
 logs:
 	docker-compose -f docker-compose.yml logs -f $(filter-out $@,$(MAKECMDGOALS))
-	
+
 down:
 	docker-compose -f docker-compose.yml down $(filter-out $@,$(MAKECMDGOALS))
 
@@ -36,3 +39,5 @@ destroy:
 test_coverage:
 	docker-compose -f docker-compose.yml exec -e DJANGO_SETTINGS_MODULE=OnlineBookStore.settings web coverage run -m pytest books/tests.py reviews/tests.py users/tests.py
 	docker-compose -f docker-compose.yml exec -e DJANGO_SETTINGS_MODULE=OnlineBookStore.settings web coverage report
+
+updtest: upd test_coverage
