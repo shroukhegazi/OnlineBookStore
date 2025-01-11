@@ -9,7 +9,7 @@ class BookListView(generics.ListAPIView):
     View to list all available books.
     """
 
-    queryset = Book.objects.all()
+    queryset = Book.objects.all().order_by("-published_date")
     serializer_class = BookSerializer
     permission_classes = [IsAuthenticated]
 
