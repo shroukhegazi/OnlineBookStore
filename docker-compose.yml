@@ -22,8 +22,12 @@ services:
       context: .
     container_name: django_web
     restart: always
-    env_file:
-      - .env
+    environment:
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
     depends_on:
       db:
         condition: service_healthy
