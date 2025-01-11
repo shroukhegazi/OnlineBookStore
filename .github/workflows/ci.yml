@@ -20,7 +20,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker-compose -f docker-compose.yml build
+          sudo docker-compose -f docker-compose.yml build
 
       - name: Run pre-commit hooks in Docker container
         run: |
