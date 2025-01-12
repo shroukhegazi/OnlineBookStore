@@ -32,17 +32,27 @@ The Online Book Store is a simple and secure platform for book lovers to explore
    ```sh
    git clone https://github.com/shroukhegazi/OnlineBookStore
    ```
-3. **`Go in the directory at the same level as docker-compose`**
+3. **`Create a `.env` file in the root of your project directory with the following content`**
+```env
+# Database configuration
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+DB_HOST=
+DB_PORT=
+```
+- Add the values with your database settings.   
+4. **`Go in the directory at the same level as docker-compose`**
 
-4. **`Build images`**
+5. **`Build images`**
    ```sh
    make build
    ```
-5. **`Migrate models`**
+6. **`Migrate models`**
    ```sh
    make migrate
    ```
-6. **`Run the project`**
+7. **`Run the project`**
    ```sh
    make up
    ```
@@ -64,8 +74,8 @@ The Online Book Store is a simple and secure platform for book lovers to explore
 - **`POST /users/auth/jwt/create/`**
   User Login
 
-### Book Operations
-
+### Books Operations
+- **`Add books from Django Admin Panel`**
 - **`GET /books/`**
   List all books.
 
