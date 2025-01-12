@@ -41,7 +41,7 @@ DB_PASSWORD=
 DB_HOST=
 DB_PORT=
 ```
-- Add the values with your database settings.   
+- Add the values with your database settings.
 4. **`Go in the directory at the same level as docker-compose`**
 
 5. **`Build images`**
